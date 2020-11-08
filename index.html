@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Resource Help Maker</title>
+
+
+  </head>
+  <body>
+
+    <div id="introDiv">
+    <h1>Your Introduction (Once upon a time)</h1>
+    <p>It’s kind of like saying Once upon a time in a different and more specific way. Tell the readers what you're going to talk about in a few sentences or start off by asking a question or whatever else will help start off what you’ll be talking about.</p>
+    <input type="text" name="intro" placeholder="It feels like every cat lover dislikes dogs and vise versa, why is that?">
+    <button type="button" name="button" onclick="showBodyDiv()">Enter</button>
+    </div>
+
+    <div id="bodyDiv" style="display:none">
+      <h1>Content (The Story)</h1>
+      <ul>
+        <li>Resources: talk about the resource and how people can use and who it’s most helpful for</li>
+        <li>Advice: If your sharing advice tells the story about how you came to that advice.</li>
+        <li>Tips and tricks: List them in a 1.) here's a tip > explain the tip 2.) here is a second tip > explain it etc. </li>
+      </ul>
+    <input type="text" name="body" value="">
+    <button type="button" name="button" onclick="showConclusionDiv()">Enter</button>
+    </div>
+
+    <div id="conclusionDiv" style="display:none">
+    <h1>Your Conclusion (The End)</h1>
+    <p>It’s kind of like saying Once upon a time in a different and more specific way. Tell the readers what you're going to talk about in a few sentences or start off by asking a question or whatever else will help start off what you’ll be talking about.</p>
+    <p>Example: It feels like every cat lover dislikes dogs and vise versa, why is that?</p>
+    <input type="text" name="intro" value="">
+    <button type="button" name="button" onclick="showAllWork()">Enter</button>
+    </div>
+
+  </body>
+</html>
