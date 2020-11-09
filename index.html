@@ -3,16 +3,53 @@
   <head>
     <meta charset="utf-8">
     <title>Resource Help Maker</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
-
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!-- Nucleo Icons -->
+    <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <link href="./assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="./assets/css/argon-design-system.css?v=1.2.0" rel="stylesheet" />
+    <!-- JS Files -->
+   <script type="text/javascript" src="slabResourceMaker.js"></script>
   </head>
   <body>
 
-    <div id="introDiv">
+    <div id="titleDiv">
+    <h1>Title and Credits</h1>
+    <p>Title your work and say who it's by.</p>
+    <div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <input class="form-control" type="text" id="title" placeholder="Title">
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <input class="form-control" type="text" id="credits" placeholder="By ...">
+    </div>
+  </div>
+</div>
+<button class="btn btn-primary" type="button" name="button" onclick="showIntroDiv()">Enter</button>
+
+
+    </div>
+
+    <div id="introDiv" style="display:none">
     <h1>Your Introduction (Once upon a time)</h1>
     <p>It’s kind of like saying Once upon a time in a different and more specific way. Tell the readers what you're going to talk about in a few sentences or start off by asking a question or whatever else will help start off what you’ll be talking about.</p>
-    <input type="text" name="intro" placeholder="It feels like every cat lover dislikes dogs and vise versa, why is that?">
-    <button type="button" name="button" onclick="showBodyDiv()">Enter</button>
+    <textarea class="form-control"  type="text" id="intro" value="" rows="3" placeholder="It feels like every cat lover dislikes dogs and vise versa, why is that?"></textarea>
+    <br>
+    <button class="btn btn-primary" type="button" name="button" onclick="showBodyDiv()">Enter</button>
     </div>
 
     <div id="bodyDiv" style="display:none">
@@ -22,16 +59,30 @@
         <li>Advice: If your sharing advice tells the story about how you came to that advice.</li>
         <li>Tips and tricks: List them in a 1.) here's a tip > explain the tip 2.) here is a second tip > explain it etc. </li>
       </ul>
-    <input type="text" name="body" value="">
-    <button type="button" name="button" onclick="showConclusionDiv()">Enter</button>
+    <textarea class="form-control"  type="text" id="body" value="" rows="3" placeholder="Write your content here ..."></textarea>
+
+    <br>
+    <button class="btn btn-primary" type="button" name="button" onclick="showConclusionDiv()">Enter</button>
     </div>
 
     <div id="conclusionDiv" style="display:none">
     <h1>Your Conclusion (The End)</h1>
     <p>It’s kind of like saying Once upon a time in a different and more specific way. Tell the readers what you're going to talk about in a few sentences or start off by asking a question or whatever else will help start off what you’ll be talking about.</p>
     <p>Example: It feels like every cat lover dislikes dogs and vise versa, why is that?</p>
-    <input type="text" name="intro" value="">
-    <button type="button" name="button" onclick="showAllWork()">Enter</button>
+    <textarea class="form-control" type="text" id="conclusion" value="" rows="3" placeholder="Write your conclusion here..."></textarea>
+
+    <br>
+    <button class="btn btn-primary" type="button" name="button" onclick="showAllWork(); makeArticle();">Enter</button>
+    </div>
+
+    <div id="articleDiv" style="display:none">
+      <h1><span id="titleResult"></span></h1>
+      <p><span id="creditsResult"></span></p>
+      <p><span id="introResult"></span></p>
+      <p><span id="bodyResult"></span></p>
+      <p><span id="conclusionResult"></span></p>
+
+      <button class="btn btn-primary" type="button">Send it In</button>
     </div>
 
   </body>
